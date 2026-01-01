@@ -20,6 +20,11 @@ app.use(cookieParser());
 app.use(express.json());
 
 
+// ROUTE ACCUEIL
+app.get('/', (req, res) => {
+    res.json({ message: 'Bienvenue sur Clone X API', version: '1.0.0' });
+});
+
 // PREFIX
 app.use('/api/user', userRouter);
 app.use('/api/tweet', tweetRouter);
