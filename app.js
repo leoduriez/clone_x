@@ -11,7 +11,8 @@ const messageRouter = require('./router/Message.router');
 
 
 // CONNECTION MONGO
-connectDB(ENV.MONGO_URI_LOCAL, ENV.DB_NAME)
+const mongoURI = ENV.MONGO_URI || ENV.MONGO_URI_LOCAL;
+connectDB(mongoURI, ENV.DB_NAME)
 
 
 // MIDDLEWARES
